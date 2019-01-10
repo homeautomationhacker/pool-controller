@@ -1,10 +1,7 @@
 
 /*
-DebugUtils.h - Simple debugging utilities.
-Copyright (C) 2011 Fabio Varesano <fabio at varesano dot net>
-
-Ideas taken from:
-http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?num=1271517197
+PoolDevice.h - Library for PoolDevice
+Copyright (C) 2018 Frank Clemnents
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the version 3 GNU General Public License as
