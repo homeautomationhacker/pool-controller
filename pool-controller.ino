@@ -80,9 +80,6 @@ bool isConnected = false;                           // Is the Wemos connected to
 const int JSON_BUFFER_SIZE = JSON_OBJECT_SIZE(3);   // The size of our JSON responses from Sinric is 3 objects long
 
 // Declare functions used in setup() and loop() - they're implemented at the end so they need to be declared here
-void firePin(int triggerPin);
-void turnOn(String deviceId);
-void turnOff(String deviceId);
 void webSocketEventCallback(WStype_t type, uint8_t *payload, size_t length);
 
 
