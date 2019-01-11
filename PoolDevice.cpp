@@ -1,7 +1,10 @@
 
 /*
-PoolDevice.h - Library for PoolDevice
-Copyright (C) 2018 Frank Clemnents
+DebugUtils.h - Simple debugging utilities.
+Copyright (C) 2011 Fabio Varesano <fabio at varesano dot net>
+
+Ideas taken from:
+http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?num=1271517197
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the version 3 GNU General Public License as
@@ -22,13 +25,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 PoolDevice::PoolDevice(int panelPin, String deviceId) {
   this->_panelPin = panelPin;
   this->_deviceId = deviceId;
-  this->_currentStatus = PoolDeviceStatus::OFF;
+  this->_currentStatus = PoolDeviceMode::OFF;
 
   pinMode(this->_panelPin, OUTPUT);
 }
 
 // Flip the status of the _currentStatus
-PoolDeviceStatus PoolDevice::_changeStatus() {
+PoolDeviceMode PoolDevice::_changeStatus() {
   if(this->_currentStatus == OFF) {
     this->_currentStatus = ON;
   }
@@ -40,7 +43,7 @@ PoolDeviceStatus PoolDevice::_changeStatus() {
 }
 
 // Simulate a button press for 0.5 seconds and then set the current stat opposite to current state.
-PoolDeviceStatus PoolDevice::_firePin() {
+PoolDeviceMode PoolDevice::_firePin() {
   digitalWrite(this->_panelPin, HIGH);
   delay(500);
   digitalWrite(this->_panelPin, LOW);

@@ -43,9 +43,9 @@ class PoolDevice
   private:
     int _panelPin;
     String _deviceId;
-    PoolDeviceStatus _currentStatus;
-    PoolDeviceStatus _firePin();
-    PoolDeviceStatus _changeStatus();
+    PoolDeviceMode _currentStatus;
+    PoolDeviceMode _firePin();
+    PoolDeviceMode _changeStatus();
 };
 
 #endif
